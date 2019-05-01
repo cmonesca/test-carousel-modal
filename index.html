@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+
+    <link href="css/lightslider.css" rel="stylesheet">
+
+    <style>
+      #fvpp-blackout {
+        display: none;
+        z-index: 499;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: #000;
+        opacity: 0.5;
+      }
+
+      #my-welcome-message {
+        display: none;
+        z-index: 500;
+        position: fixed;
+        width: 36%;
+        left: 30%;
+        top: 20%;
+        padding: 20px 2%;
+        font-family: Calibri, Arial, sans-serif;
+        background: #FFF;
+      }
+
+      #fvpp-close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+      }
+
+      #fvpp-dialog h2 {
+        font-size: 2em;
+        margin: 0;
+      }
+
+      #fvpp-dialog p { margin: 0; }
+
+      .lSAction > .lSPrev {
+        left: 0px;
+      }
+
+      .lSAction > .lSNext {
+        right: 0px;
+      }
+    </style>
+  </head>
+
+  <body style="background:#505050;">
+    <p><a id="show-message">Show intro again</a></p>
+
+    <div id="my-welcome-message">
+      <div>
+        <ul id="adaptive" style="padding: 10px 50px;">
+          <li>
+            <div style="display: flex; flex-direction: row;">
+              <div style="padding-right: 10px; flex-basis: 50%;">
+                <h3>First Slide</h3>
+                <p>Lorem ipsum Cupidatat quis pariatur anim.Lorem ipsum Cupidatat quis pariatur anim.Lorem ipsum Cupidatat quis pariatur anim.</p>
+              </div>
+              <div style="flex-basis: 50%;">
+                <img src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC84MTkvb3JpZ2luYWwvY3V0ZS1raXR0ZW4uanBn" style="width: 200px; height: auto;">
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div style="display: flex; flex-direction: row;">
+              <div style="padding-right: 10px; flex-basis: 50%;">
+                <h3>First Slide</h3>
+                <p>Lorem ipsum Cupidatat quis pariatur anim.Lorem ipsum Cupidatat quis pariatur anim.Lorem ipsum Cupidatat quis pariatur anim.</p>
+              </div>
+              <div style="flex-basis: 50%;">
+                <img src="https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNC84MTkvb3JpZ2luYWwvY3V0ZS1raXR0ZW4uanBn" style="width: 200px; height: auto;">
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+    <script type="text/javascript" src="js/lightslider.js"></script>
+    <script type="text/javascript" src="js/jquery-firstVisitPopup.js"></script>
+
+    <!-- CALL LIGHT SLIDER -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('#adaptive').lightSlider({
+            adaptiveHeight:true,
+            item:1,
+            slideMargin:0,
+            loop:false,
+            pager: true,
+            keyPress: true
+        });
+    });
+    </script>
+
+    <script type="text/javascript">
+      $(window).load(function() {
+        $('#my-welcome-message').firstVisitPopup({
+          cookieName : 'homepage',
+          showAgainSelector: '#show-message'
+        });
+      });
+    </script>
+  </body>
+</html>
